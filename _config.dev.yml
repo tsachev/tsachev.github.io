@@ -1,0 +1,10 @@
+gems:
+  - jekyll-sitemap
+  - jekyll-asciidoc
+exclude:
+  - README
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - gulpfile.js
+  - node_modules
