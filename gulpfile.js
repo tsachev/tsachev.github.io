@@ -6,7 +6,7 @@ var git = require('gulp-git');
 
 
 gulp.task('publish', ['build'], function () {
-    git.clone('https://' + proecess.env.GH_TOKEN + '@github.com/tsachev/tsachev.github.io.git', {args: '.master'});
+    git.clone('https://' + process.env.GH_TOKEN + '@github.com/tsachev/tsachev.github.io.git', {args: '.master'});
     gulp.src(['_site/**/*']).pipe(gulp.dest('.master'));
     git.exec({args: 'config user.email "tsachev@gmail.com"', log: true, cwd: '.master'});
     git.exec({args: 'config user.name "Vladimir Tsanev"', log: true, cwd: '.master'});
