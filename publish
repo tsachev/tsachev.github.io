@@ -18,8 +18,10 @@ if [ "x${CI}" = "x" ] || [ "${TRAVIS_PULL_REQUEST}" = "false" ] ; then
   git add -A .
 
   if [ -z "${TRAVIS_BUILD_NUMBER}" ] ; then
+    echo Publishing with current user
     git commit -a -m "Publish"
   else
+    echo Publishing with Travic CI
     git commit -a --author "Travis CI <>" -m "Travis #${TRAVIS_BUILD_NUMBER}"
     git push --quiet > /dev/null 2>&1
   fi
