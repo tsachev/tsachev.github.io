@@ -22,6 +22,6 @@ cache:
     - node_modules
 
 
-script: publish
+script: ./publish
 
 sudo: false
