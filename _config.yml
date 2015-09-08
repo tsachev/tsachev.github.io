@@ -1,0 +1,37 @@
+title: tsachev.io
+tagline: bcrdf
+
+author:
+  name: Vladimir Tsanev
+  email: tsachev@gmail.com
+
+development: false
+debug: false
+
+paginate: 10
+
+timezone: Europe/Sofia
+future: false
+
+exclude:
+  - README
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - gulpfile.js
+  - node_modules
+
+gems:
+  - jekyll-sitemap
+  - jekyll-asciidoc
+
+assets:
+  dirname: assets
+  sources:
+    - js
+    - css
+    - img
+    - bower_components
+  js_compressor: 'uglifier'
+  css_compressor: 'yui'
+  cache: true

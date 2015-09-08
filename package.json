@@ -1,4 +1,11 @@
 {
-  "name": "application-name",
-  "version": "0.0.1"
+  "name": "tsachev.io",
+  "version": "0.0.1",
+  "repository": "tsachev/tsachev.github.io",
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-git": "^1.4.0",
+    "gulp-poole": "^0.3.0"
+  }
 }
