@@ -14,3 +14,4 @@ script: gulp
 env:
   global:
     secure: hEpWxk31mht3RtSlzhELS7uTTwzA5o3J/+csz/pSVl9l2ub1/RxgH5INxNzFXDOARZst2yNjs5Y4ASvrZ+DoUlEFfRkwAny9A+wuaIagtDWbx2WeDYxLEkR1lrBz09N+R1mB5IfCFDHKZ37U+MKWAy/RO3kiNVRD5GvxYwg/EMU=
+sudo:false
