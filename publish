@@ -20,7 +20,7 @@ if [ "x${CI}" = "x" ] || [ "${TRAVIS_PULL_REQUEST}" = "false" ] ; then
   if [ -z "${TRAVIS_BUILD_NUMBER}" ] ; then
     git commit -a -m "Publish"
   else
-    git commit -a -m "Travis #${TRAVIS_BUILD_NUMBER}"
+    git commit -a --author "Travis CI <>" -m "Travis #${TRAVIS_BUILD_NUMBER}"
     git push --quiet > /dev/null 2>&1
   fi
 fi
