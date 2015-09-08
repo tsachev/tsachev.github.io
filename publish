@@ -1,0 +1,28 @@
+#!/bin/bash
+set -ev
+
+gulp jekyll-build
+
+if [ "x${CI}" = "x" ] || [ "${TRAVIS_PULL_REQUEST}" = "false" ] ; then
+  rm -rf .publish/
+  if [ -z "${GH_TOKEN}" ] ; then
+    git clone --depth 1 `git config remote.origin.url` .publish
+  else
+    git clone --depth 1 https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git .publish
+  fi
+
+  cp -R _site/* .publish/
+
+  cd .publish
+
+  git add -A .
+
+  if [ -z "${TRAVIS_BUILD_NUMBER}" ] ; then
+    git commit -a -m "Publish"
+  else
+    git config user.email "\<\>"
+    git config user.name  "Travis CI"
+    git commit -a -m "Travis #${TRAVIS_BUILD_NUMBER}"
+    git push --quiet > /dev/null 2>&1
+  fi
+fi
