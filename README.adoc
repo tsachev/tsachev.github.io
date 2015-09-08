@@ -1,2 +1,7 @@
 == tsachev.io
-image:https://travis-ci.org/tsachev/tsachev.github.io.svg?branch=editor["Build Status", link="https://travis-ci.org/tsachev/tsachev.github.io"]
+image:https://travis-ci.org/tsachev/tsachev.github.io.svg?branch=editor["CI", link="https://travis-ci.org/tsachev/tsachev.github.io"]
+
+[source,sh]
+----
+./publish
+----
