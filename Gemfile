@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '~>2.4.0'
+gem 'jekyll', '~>2.5.3'
 gem 'asciidoctor', '~>1.5.2'
 
 gem 'compass', '~>1.0.3'
