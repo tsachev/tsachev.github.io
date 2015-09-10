@@ -9,6 +9,7 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap', '~>0.8.1'
   gem 'jekyll-asciidoc', '~>1.0.0'
   gem 'jekyll-feed', '~>0.3.1'
+  gem 'jekyll-redirect-from', '~>0.8.0'
 end
 
 group :development do

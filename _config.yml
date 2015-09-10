@@ -9,6 +9,7 @@ development: false
 debug: false
 
 paginate: 10
+paginate_path: /page/:num/
 
 timezone: Europe/Sofia
 future: false
@@ -30,6 +31,7 @@ gems:
   - jekyll-sitemap
   - jekyll-asciidoc
   - jekyll-feed
+  - jekyll-redirect-from
 
 assets:
   dirname: assets

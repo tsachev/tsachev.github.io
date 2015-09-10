@@ -1,20 +1,16 @@
 ---
 layout: default
 title: Home
+redirect_from: /page/1/index.html
 ---
-
 <div class="posts">
-    {% for post in paginator.posts %}
-    <article class="post">
-        <h1 class="post-title">
-            <a href="{{ site.baseurl }}{{ post.url }}">
-                {{ post.title }}
-            </a>
-        </h1>
-
-        <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
-
-        {{ post.content }}
-    </article>
-    {% endfor %}
+  {% if paginator.previous_page %}<a href="{{ paginator.previous_page_path }}">Newer Entries</a>{% endif %}
+  {% for post in paginator.posts %}
+  <article class="post">
+    <h1 class="post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
+    {{ post.content }}
+  </article>
+  {% endfor %}
+  {% if paginator.next_page %}<a href="{{ paginator.next_page_path }}">Older Entries</a>{% endif %}
 </div>
