@@ -1,5 +1,5 @@
-title: tsachev.io
-tagline: bcrdf
+name: tsachev.io
+description: bcrdf
 
 author:
   name: Vladimir Tsanev
@@ -13,6 +13,10 @@ paginate: 10
 timezone: Europe/Sofia
 future: false
 
+asciidoctor:
+  attributes:
+    - notitle
+
 exclude:
   - README
   - Gemfile
@@ -20,10 +24,13 @@ exclude:
   - package.json
   - gulpfile.js
   - node_modules
+  - publish
+  - config.rb
 
 gems:
   - jekyll-sitemap
   - jekyll-asciidoc
+  - jekyll-feed
 
 assets:
   dirname: assets

@@ -1,16 +1,14 @@
 source 'https://rubygems.org'
 
-require 'json'
-require 'open-uri'
-versions = JSON.parse(open('https://pages.github.com/versions.json').read)
+gem 'jekyll', '~>2.4.0'
+gem 'asciidoctor', '~>1.5.2'
 
-gem 'jekyll', versions['jekyll']
-gem 'asciidoctor'
-
+gem 'compass', '~>1.0.3'
 
 group :jekyll_plugins do
-  gem 'jekyll-sitemap'
-  gem 'jekyll-asciidoc'
+  gem 'jekyll-sitemap', '~>0.8.1'
+  gem 'jekyll-asciidoc', '~>1.0.0'
+  gem 'jekyll-feed', '~>0.3.1'
 end
 
 group :development do

@@ -1,6 +1,9 @@
 #!/bin/bash
 set -ev
 
+# patch jekyll-feed to use asciidoc instead of markdown
+sed -i 's/markdownify/asciidocify/g' .vendor/bundle/ruby/*/gems/jekyll-feed-*/lib/feed.xml
+
 gulp jekyll-build
 
 if [ "x${CI}" = "x" ] || [ "${TRAVIS_PULL_REQUEST}" = "false" ] ; then
