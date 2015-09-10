@@ -4,19 +4,17 @@ set -ev
 # patch jekyll-feed to use asciidoc instead of markdown
 sed -i 's/markdownify/asciidocify/g' .vendor/bundle/ruby/*/gems/jekyll-feed-*/lib/feed.xml
 
-gulp jekyll-build
-
 if [ "x${CI}" = "x" ] || [ "${TRAVIS_PULL_REQUEST}" = "false" ] ; then
-  rm -rf .publish/
+  rm -rf _site/
   if [ -z "${GH_TOKEN}" ] ; then
-    git clone --depth 1 `git config remote.origin.url` .publish
+    git clone --depth 1 `git config remote.origin.url` _site
   else
-    git clone --depth 1 https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git .publish
+    git clone --depth 1 https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git _site
   fi
 
-  cp -R _site/* .publish/
+  gulp jekyll-build
 
-  cd .publish
+  cd _site
 
   git add -A .
 

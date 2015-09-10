@@ -18,7 +18,6 @@ asciidoctor:
     - notitle
 
 exclude:
-  - README
   - Gemfile
   - Gemfile.lock
   - package.json
